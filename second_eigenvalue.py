@@ -1,3 +1,6 @@
+# 26002304049 矢野陽大
+# ２番目の固有値計算
+
 import ast
 import numpy as np
 

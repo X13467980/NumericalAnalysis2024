@@ -1,3 +1,6 @@
+# 26002304049 矢野陽大
+# ニュートン法の計算
+
 import numpy as np
 
 def newton_method(f_str, df_str, x0, accuracy=0.001, max_iterations=100):

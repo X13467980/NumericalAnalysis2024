@@ -1,3 +1,6 @@
+# 26002304049 矢野陽大
+# レイリー商
+
 import numpy as np
 
 def rayleigh_quotient(A, x, tolerance=1e-6, max_iter=100):

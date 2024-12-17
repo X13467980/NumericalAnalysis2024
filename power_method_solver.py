@@ -1,3 +1,6 @@
+# 26002304049 矢野陽大
+# 冪乗計算
+
 import numpy as np
 
 def power_method(matrix, v, limit=0.001, max_iter=100):
