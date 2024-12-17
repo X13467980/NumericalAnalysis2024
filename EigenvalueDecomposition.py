@@ -2,27 +2,38 @@
 # 固有値分解
 
 import numpy as np
+import sympy as sp
+import ast
 
-# 関数: 固有値行列Aと固有ベクトル行列Vを使って行列を復元する
-def restration(A, V):
+def main():
+    # 行列入力
+    print("行列を入力してください (形式: [1, 2], [3, 4]):")
+    A_input = input()
+    A = np.array(ast.literal_eval(f"[{A_input}]"))  # 入力をリストとして評価
     
-    """
-    行列A (固有値の対角行列) と固有ベクトル行列Vを用いて元の行列を復元する。
-    計算式: V * A * V.T
-    """
-    return V @ A @ V.T
+    print("\n入力された行列:")
+    print(A)
 
-# 固有値の対角要素を持つ対角行列 A
-A = np.diag([1, 1])
-print("固有値の対角要素は\n{}".format(A))
+    # 固有値分解
+    eigenvalues, eigenvectors = np.linalg.eig(A)
+    print("\n固有値:")
+    print(eigenvalues)
 
-# 固有ベクトルを含む行列 V
-V = np.array([
-    [1/np.sqrt(2), 1/np.sqrt(2)],  # 第一固有ベクトル
-    [-1/np.sqrt(2), 1/np.sqrt(2)]  # 第二固有ベクトル
-])
-print("固有ベクトル行列は\n{}".format(V))
+    print("\n固有ベクトル:")
+    print(eigenvectors)
 
-# 関数を使って復元結果を求める
-result = restration(A, V)
-print("復元結果は\n{}".format(result))
+    n = sp.symbols('n')  # nを定義
+    D = sp.diag(*[eigenval**n for eigenval in eigenvalues])  # D^nのシンボリック表現
+
+    # 固有ベクトル行列Pとその逆行列
+    P = sp.Matrix(eigenvectors)
+    P_inv = P.inv()
+
+    # A^n = P * D^n * P^(-1)
+    A_n = P * D * P_inv
+
+    print("\nA^n:")
+    sp.pprint(A_n)
+
+if __name__ == "__main__":
+    main()
