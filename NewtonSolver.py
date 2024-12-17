@@ -65,7 +65,7 @@ def main():
         # ユーザーから解く関数とその微分を入力
         print("方程式 f(x) = 0")
         f_str = input("解く関数 f(x)（例: x**2 - 2）: ")
-        df_str = input("f(x) の微分 df(x) を入力してください（例: 2*x : ")
+        df_str = input("f(x) の微分 df(x) を入力してください（例: 2*x) : ")
         
         # 初期値、精度、最大反復回数を入力
         x0 = float(input("初期値 x0 : "))

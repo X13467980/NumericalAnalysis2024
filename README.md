@@ -4,4 +4,4 @@
 実行環境 
     MacBook Apple M2チップ
     MacOS Sequoia 15.2 　
-使用ライブラリ　numpy, ast
+使用ライブラリ　numpy, sympy, ast
