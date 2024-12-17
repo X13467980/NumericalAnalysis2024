@@ -4,26 +4,24 @@
 import numpy as np
 
 def newton_method(f_str, df_str, x0, accuracy=0.001, max_iterations=100):
+    """
+    ニュートン法を用いて f(x) = 0 の解を求める関数。
     
-    #ニュートン法を用いて f(x) = 0 の解を求める関数。
+    Args:
+        f_str (str): 解く関数の式 (例: "x**2 - 10*np.sin(x) - 2")
+        df_str (str): 関数の微分の式 (例: "2*x - 10*np.cos(x)")
+        x0 (float): 初期値
+        accuracy (float): 許容される誤差（収束条件）
+        max_iterations (int): 最大反復回数
     
-    #パラメータ
-    #   f_str (str): 解く関数の式 (例: "x**2 - 10*np.sin(x) - 2")
-    #   df_str (str): 関数の微分の式 (例: "2*x - 10*np.cos(x)")
-    #   x0 (float): 初期値
-    #   accuracy (float): 許容される誤差（収束条件）
-    #   max_iterations (int): 最大反復回数
-    
+    Returns:
+        float: 解の近似値
+    """
     def f(x):
         return eval(f_str)
 
     def df(x):
         return eval(df_str)
-
-    # 反復式g(x)を文字列として表示
-    g_str = f"x - ({f_str}) / ({df_str})"
-    print("\nニュートン法の反復式 g(x) : ")
-    print(f"g(x) = {g_str}\n")
 
     x = x0
     n = 1
@@ -57,20 +55,20 @@ def newton_method(f_str, df_str, x0, accuracy=0.001, max_iterations=100):
             print(f"予期しないエラー: {e}")
             return None
 
-    print("\n⚠️ 最大反復回数に達しました。")
+    print("\n⚠️ 最大反復回数に達しました。解が収束しませんでした。")
     return None
 
 def main():
     try:
         # ユーザーから解く関数とその微分を入力
-        print("方程式 f(x) = 0")
-        f_str = input("解く関数 f(x)（例: x**2 - 2）: ")
-        df_str = input("f(x) の微分 df(x) を入力してください（例: 2*x : ")
+        print("方程式 f(x) = 0 を解きます。")
+        f_str = input("解く関数 f(x) を入力してください（例: x**2 - 10*np.sin(x) - 2）: ")
+        df_str = input("f(x) の微分 df(x) を入力してください（例: 2*x - 10*np.cos(x)）: ")
         
         # 初期値、精度、最大反復回数を入力
-        x0 = float(input("初期値 x0 : "))
-        accuracy = float(input("許容誤差（例: 0.001）: ") or 0.001)
-        max_iterations = int(input("最大反復回数（例: 100）: ") or 100)
+        x0 = float(input("初期値 x0 を入力してください: "))
+        accuracy = float(input("許容誤差（例: 0.001）を入力してください: ") or 0.001)
+        max_iterations = int(input("最大反復回数（例: 100）を入力してください: ") or 100)
         
         # ニュートン法の実行
         result = newton_method(f_str, df_str, x0, accuracy, max_iterations)
