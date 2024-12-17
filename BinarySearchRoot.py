@@ -15,7 +15,7 @@ def binary_search(f, a, b, limit=0.01, max_iter=50):
 
     # 解の存在チェック
     if f(a) * f(b) > 0:
-        print("Error: 初期区間 [a, b] に解が存在しない可能性があります。")
+        print("Error: 初期区間 [a, b] に解が存在しません")
         return None
 
     while (b - a) > limit and num < max_iter:
@@ -42,7 +42,6 @@ def binary_search(f, a, b, limit=0.01, max_iter=50):
 
 # 実行部
 if __name__ == '__main__':
-    print("任意の関数の解を二分法で求めます。")
     try:
         print("\n例: x^2 - 5 の場合、lambda x: x**2 - 5 と入力")
         func_input = input("関数 f(x) をPython形式で入力: ")
@@ -59,6 +58,6 @@ if __name__ == '__main__':
         if solution is not None:
             print(f"\n関数 f(x) = {func_input} の近似解は x ≈ {solution}")
     except ValueError:
-        print("エラー: 数値を正しく入力してください。")
+        print("Error: 数値を正しく入力してください。")
     except Exception as e:
         print(f"予期しないエラー: {e}")
