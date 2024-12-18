@@ -13,7 +13,7 @@ print("固有値の対角要素\n{}".format(A))
 # 固有ベクトル出力
 V = np.array([[1/np.sqrt(2), -1/np.sqrt(2)],[1/np.sqrt(2), 1/np.sqrt(2)]])
 print(V)
-print("固有ベクトルは\n{}".format(V))
+print("固有ベクトル\n{}".format(V))
 
 #計算結果を出力
-print("復元結果は\n{}".format(restration(A,V)))
+print("結果\n{}".format(restration(A,V)))
