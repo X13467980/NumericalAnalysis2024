@@ -8,8 +8,8 @@ def newton_method(f_str, df_str, x0, accuracy=0.001, max_iterations=100):
     #ニュートン法を用いて f(x) = 0 の解を求める関数。
     
     #パラメータ
-    #   f_str (str): 解く関数の式 (例: "x**2 - 10*np.sin(x) - 2")
-    #   df_str (str): 関数の微分の式 (例: "2*x - 10*np.cos(x)")
+    #   f_str (str): 解く関数の式 
+    #   df_str (str): 関数の微分の式 
     #   x0 (float): 初期値
     #   accuracy (float): 許容される誤差（収束条件）
     #   max_iterations (int): 最大反復回数

@@ -5,3 +5,7 @@
     MacBook Apple M2チップ
     MacOS Sequoia 15.2 　
 使用ライブラリ　numpy, sympy, ast, math
+
+問２：NewtonSolver.pyを使用
+問３：ReconstructMatrix.pyを使用
+問４：RayleighQuotientSolver.pyを使用
