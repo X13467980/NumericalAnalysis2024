@@ -1,6 +1,3 @@
-# 26002304049 矢野陽大
-# 二分法
-
 def binary_search(f, a, b, limit=0.01, max_iter=50):
     
     # 二分法で f(x) = 0 の解を求める
