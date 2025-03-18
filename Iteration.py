@@ -1,4 +1,3 @@
-# 26002304049 矢野陽大
 # 反復法
 
 import sympy as sp
